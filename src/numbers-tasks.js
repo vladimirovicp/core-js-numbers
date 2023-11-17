@@ -485,6 +485,8 @@ function getFloatOnString(str) {
 /**
  * Returns an integer of the specified base or, if the number cannot be parsed
  * from the argument, returns NaN.
+ * Возвращает целое число с указанной базой или, если число
+ * невозможно проанализировать из аргумента, возвращает NaN.
  *
  * @param {string} str
  * @param {number} base
@@ -496,12 +498,13 @@ function getFloatOnString(str) {
  * '1.234', 2           => 1
  * '10', 8              => 8
  */
-function getIntegerOnString(/* str, base */) {
-  throw new Error('Not implemented');
+function getIntegerOnString(str, base) {
+  return Number.parseInt(str, base);
 }
 
 /**
  * Returns whether a number is a safe integer.
+ * Возвращает, является ли число безопасным целым числом
  *
  * @param {number} number
  * @return {boolean}
@@ -511,12 +514,13 @@ function getIntegerOnString(/* str, base */) {
  * 3.5      => false
  * 2 ** 53  => false
  */
-function isSafeInteger(/* number */) {
-  throw new Error('Not implemented');
+function isSafeInteger(number) {
+  return Number.isSafeInteger(number);
 }
 
 /**
  * Returns the smallest integer less than or equal to a given number.
+ * Возвращает наименьшее целое число, меньшее или равное заданному числу.
  *
  * @param {number} number
  * @return {number}
@@ -525,12 +529,13 @@ function isSafeInteger(/* number */) {
  * 5.9  => 5
  * -5.1 => -6
  */
-function roundToSmallestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToSmallestInteger(number) {
+  return Math.floor(number);
 }
 
 /**
  * Returns the largest integer greater than or equal to a given number.
+ * Возвращает наибольшее целое число, большее или равное заданному числу.
  *
  * @param {number} number
  * @return {number}
@@ -539,12 +544,13 @@ function roundToSmallestInteger(/* number */) {
  * 5.1  => 6
  * -5.9 => -5
  */
-function roundToLargestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToLargestInteger(number) {
+  return Math.ceil(number);
 }
 
 /**
  * Returns the value of a number rounded to the nearest integer.
+ * Возвращает наибольшее значение, большее или равное заданному значению.
  *
  * @param {number} number
  * @return {number}
@@ -554,12 +560,13 @@ function roundToLargestInteger(/* number */) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function roundToNearestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToNearestInteger(number) {
+  return Math.round(number);
 }
 
 /**
  * Returns the integer part of a number by removing any fractional digits.
+ * Возвращает целую часть числа, удаляя все дробные цифры.
  *
  * @param {number} number
  * @return {number}
@@ -569,12 +576,13 @@ function roundToNearestInteger(/* number */) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function getIntegerPartNumber(/* number */) {
-  throw new Error('Not implemented');
+function getIntegerPartNumber(number) {
+  return Math.trunc(number);
 }
 
 /**
  * Returns the sum of numbers.
+ * Возвращает сумму чисел.
  *
  * @param {number} x1
  * @param {number} x2
@@ -585,12 +593,13 @@ function getIntegerPartNumber(/* number */) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(/* x1, x2, x3 */) {
-  throw new Error('Not implemented');
+function getSumOfNumbers(x1, x2, x3) {
+  return parseFloat((x1 + x2 + x3).toFixed(10));
 }
 
 /**
  * Returns the largest number.
+ * Возвращает наибольшее число.
  *
  * @param {number} firstNumber
  * @param {number} secondNumber
@@ -601,12 +610,13 @@ function getSumOfNumbers(/* x1, x2, x3 */) {
  * -5, -6 => -5
  * 0, 5   => 5
  */
-function getMaxNumber(/* firstNumber, secondNumber */) {
-  throw new Error('Not implemented');
+function getMaxNumber(firstNumber, secondNumber) {
+  return Math.max(firstNumber, secondNumber);
 }
 
 /**
  * Returns a random integer in the range from min to max.
+ * Возвращает случайное целое число в диапазоне от минимума до максимума.
  *
  * @param {number} min
  * @param {number} max
@@ -617,12 +627,13 @@ function getMaxNumber(/* firstNumber, secondNumber */) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(/* min, max */) {
-  throw new Error('Not implemented');
+function getRandomInteger(min, max) {
+  return Math.random() * (max - min - 1) + min;
 }
 
 /**
  * Returns the length of the hypotenuse of a right triangle.
+ * Возвращает длину гипотенузы прямоугольного треугольника.
  *
  * @param {number} a
  * @param {number} b
@@ -631,8 +642,8 @@ function getRandomInteger(/* min, max */) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(/* a, b */) {
-  throw new Error('Not implemented');
+function getHypotenuse(a, b) {
+  return Math.hypot(a, b);
 }
 
 /**
