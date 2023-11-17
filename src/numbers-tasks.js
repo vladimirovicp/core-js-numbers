@@ -649,6 +649,8 @@ function getHypotenuse(a, b) {
 /**
  * Returns count of odd numbers from zero to the resulting number.
  * The resulting number is taken into account.
+ * Возвращает количество нечетных чисел от нуля до полученного числа.
+ * Полученное число учитывается.
  *
  * @param {number} number
  * @return {number}
@@ -659,8 +661,18 @@ function getHypotenuse(a, b) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  let count = 0;
+  if (number > 0) {
+    for (let i = 0; i < number; i += 2) {
+      count += 1;
+    }
+  } else {
+    for (let i = 0; i > number; i -= 2) {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 module.exports = {
